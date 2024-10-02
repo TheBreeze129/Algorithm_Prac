@@ -1,5 +1,5 @@
 N, K = map(int, input().split())
-scores = [(lambda x : [int(x[0]), int("".join(x[1:]))])(input().split()) for _ in range(N)]
+scores = [(lambda x : [int(x[0]), int(x[1]+x[2].zfill(7)+x[3].zfill(7))])(input().split()) for _ in range(N)]
 scores.sort(key=lambda x: x[1], reverse=True)
 rank = 1
 scores[0].append(1)
