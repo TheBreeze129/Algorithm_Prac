@@ -31,8 +31,8 @@ int main() {
   int rank = 1;
   if (countries[0].country == K) cout << rank;
   else {
-    for (int i=1; i<N; i++) {
-      if (countries[i] != countries[i-1]) rank++;
+    for (int i=1;i<N;i++) {
+      if (countries[i] != countries[i-1]) rank = i+1;
       if (countries[i].country == K) {
         cout << rank;
         break;
