@@ -1,7 +1,8 @@
 from itertools import *
 
 def find(seq):
-  start=end=0
+  start=0
+  end=0
   for i in range(N+1):
     if i!=seq[i]:
       if not start:
@@ -17,20 +18,20 @@ seq = [0]+[*map(int,input().split())]
 
 start,end = find(seq)
 
-interval = []; s = start
+gap = []; s = start
 while s<=end:
-  interval.append(s)
+  gap.append(s)
   e = s
   while e<end:
     if abs(seq[e+1]-seq[e])==1:
       e += 1
     else:
       break
-  interval.append(e)
+  gap.append(e)
   s = e+1
   
 seq0 = [i for i in range(N+1)]
-for s,e in combinations(interval,2):
+for s,e in combinations(gap,2):
   s1,e1 = min(s,e),max(s,e)
   seq1 = reverse(seq,s1,e1)
   s2,e2 = find(seq1)
