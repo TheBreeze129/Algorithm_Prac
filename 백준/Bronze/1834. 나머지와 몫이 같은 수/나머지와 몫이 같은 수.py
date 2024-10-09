@@ -1,9 +1,2 @@
-import sys
-input = sys.stdin.readline
-
 N = int(input())
-
-s = 0
-for i in range(1, N):
-    s += (i*N+i)
-print(s)
+print(sum([x*N+x for x in range(1,N)]))
