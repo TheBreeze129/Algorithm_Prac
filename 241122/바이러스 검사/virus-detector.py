@@ -1,18 +1,16 @@
 import sys
 input = sys.stdin.readline
+from math import ceil
 
 N = int(input())
 customers = list(map(int, input().split()))
 lead, mate = map(int, input().split())
 
-answer = 0
+answer = len(customers)
 
 for num in customers:
-    answer += 1
-    num -= lead
-    if num <= 0:
+    if num <= lead:
         continue
-    answer += (num // mate)
-    if num % mate != 0:
-        answer += 1
+    num -= lead
+    answer += ceil(num / mate)
 print(answer)
