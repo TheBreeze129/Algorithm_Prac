@@ -1,0 +1,1 @@
+print(input()[0:0],list(map(int, input().split())).count(int(input())),sep="")
