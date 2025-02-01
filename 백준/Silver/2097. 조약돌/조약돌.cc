@@ -1,37 +1,21 @@
 #include <iostream>
 #include <cmath>
-
 using namespace std;
 
 int main() {
     int N;
     cin >> N;
-    
     int K = N;
-
     while (true) {
-        double temp = sqrt(K);
-        if (temp == (int)temp) {
-            break;
-        }
-        K -= 1;
+        double T = sqrt(K);
+        if (T == (int)T) break;
+        K--;
     }
-
-    int col = (int)sqrt(K);
-    int row = N / col;
-    if (N % col != 0) {
-        row += 1;
-    }
-
-    if (col == 1) {
-        col += 1;
-    }
-
-    if (row == 1) {
-        col += 1;
-    }
-
-    cout << 2 * (row + col - 2) << endl;
-
+    int C = (int)sqrt(K);
+    int R = N / C;
+    if (N % C != 0)  R++;
+    if (C == 1) C++;
+    if (R == 1) C++;
+    cout << 2 * (R + C - 2);
     return 0;
 }
